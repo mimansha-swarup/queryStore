@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { PlusIcon } from "lucide-react";
 import React from "react";
 
@@ -16,6 +17,7 @@ const Navbar = () => {
       >
         <PlusIcon /> Add
       </Button>
+      <SidebarTrigger className="ml-auto" />
     </div>
   );
 };

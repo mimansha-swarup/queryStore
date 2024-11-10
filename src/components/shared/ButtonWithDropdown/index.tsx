@@ -20,7 +20,7 @@ import { IMenuDynamicDropdown, ISortConfig } from "@/types/constants";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
-export function DropdownMenuCheckboxes({ config }: { config: ISortConfig }) {
+export function ButtonWithDropdown({ config }: { config: ISortConfig }) {
   const renderMenuItem = (content: IMenuDynamicDropdown) => {
     switch (content.variant) {
       case MENU_ITEM_VARIANT.SEPARATOR:
@@ -42,6 +42,20 @@ export function DropdownMenuCheckboxes({ config }: { config: ISortConfig }) {
               </DropdownMenuRadioItem>
             ))}
           </DropdownMenuRadioGroup>
+        );
+      case MENU_ITEM_VARIANT.CHECKBOX:
+        return (
+         
+          <DropdownMenuCheckboxItem
+            key={content.id}
+            className={`flex gap-2 ${content.className}`}
+            {...content?.option}
+          >
+            <>
+              {content?.icon}
+              {content?.label}
+            </>
+          </DropdownMenuCheckboxItem>
         );
       case MENU_ITEM_VARIANT.LABEL:
         return (
@@ -68,30 +82,7 @@ export function DropdownMenuCheckboxes({ config }: { config: ISortConfig }) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="">
-        <DropdownMenuLabel className="text-xs text-secondaryText">
-          Sort By
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          className=""
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
-        >
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
-          disabled
-        >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
-        >
-          Panel
-        </DropdownMenuCheckboxItem>
+        {config.contents?.map((content) => renderMenuItem(content))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

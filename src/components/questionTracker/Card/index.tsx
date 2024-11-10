@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Trash, View } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import QuestionViewSheet from "../QuestionDetailsSheet";
 
 const Card = () => {
   return (
@@ -37,20 +38,17 @@ const Card = () => {
         </div>
         <div className="hidden gap-2 ml-auto group-hover:flex ">
           <Button
-            size="icon"
-            className="bg-transparent hover:bg-activeBackground text-danger"
+            variant="secondary"
+            size="sm"
+            className="bg-sidebarBackground hover:bg-activeBackground text-danger"
           >
             <Trash />
           </Button>
+          <QuestionViewSheet />
           <Button
-            size="icon"
-            className="bg-transparent hover:bg-activeBackground text-white"
-          >
-            <View />
-          </Button>
-          <Button
-            size="icon"
-            className="bg-transparent hover:bg-activeBackground text-yellow"
+            variant="secondary"
+            size="sm"
+            className="bg-sidebarBackground hover:bg-activeBackground text-yellow-500"
           >
             <Star />
           </Button>
