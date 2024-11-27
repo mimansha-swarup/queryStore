@@ -7,7 +7,7 @@ import QuestionViewSheet from "../QuestionDetailsSheet";
 
 const Card = () => {
   return (
-    <div className="px-4  cursor-pointer hover:bg-disableBackground">
+    <div className="px-4  cursor-pointer  hover:bg-disableBackground">
       <div className="flex gap-8 group items-center py-2 border-y border-shadow p-2 ">
         <Image
           alt="gfg"
