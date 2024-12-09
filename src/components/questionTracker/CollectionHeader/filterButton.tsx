@@ -74,21 +74,21 @@ export function DropdownMenuCheckboxes({ config }: { config: ISortConfig }) {
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           className=""
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
+          // checked={showStatusBar}
+          // onCheckedChange={setShowStatusBar}
         >
           Status Bar
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
+          // checked={showActivityBar}
+          // onCheckedChange={setShowActivityBar}
           disabled
         >
           Activity Bar
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
+          // checked={showPanel}
+          // onCheckedChange={setShowPanel}
         >
           Panel
         </DropdownMenuCheckboxItem>
